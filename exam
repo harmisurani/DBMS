@@ -1,0 +1,311 @@
+
+SQL> create table deposit(
+  2  actone varchar2(5),
+  3  cname varchar2(15),
+  4  bname varchar2(15),
+  5  amount number(9,2),
+  6  adate date);
+create table deposit(
+             *
+ERROR at line 1:
+ORA-00955: name is already used by an existing object
+
+
+SQL> create table deposit2(
+  2  actone varchar2(5),
+  3  cname varchar2(15
+  4  );
+)
+*
+ERROR at line 4:
+ORA-00907: missing right parenthesis
+
+
+SQL> create table deposite3(
+  2  actone varchar2(5),
+  3  cname varchar2(15),
+  4  bname varchar2(15),
+  5  amount number(9,2),
+  6  adate date);
+
+Table created.
+
+SQL> insert into deposite3 values('&actno','&cname','&bname',amount,'&adate');
+Enter value for actno: 100
+Enter value for cname: anil
+Enter value for bname: arce
+Enter value for adate: 1000.00
+old   1: insert into deposite3 values('&actno','&cname','&bname',amount,'&adate')
+new   1: insert into deposite3 values('100','anil','arce',amount,'1000.00')
+insert into deposite3 values('100','anil','arce',amount,'1000.00')
+                                                 *
+ERROR at line 1:
+ORA-00984: column not allowed here
+
+
+SQL> insert into deposite3 values('&actno','&cname','&bname','amount','&adate');
+Enter value for actno: 100
+Enter value for cname: anil
+Enter value for bname: arce
+Enter value for adate: 1000.00
+old   1: insert into deposite3 values('&actno','&cname','&bname','amount','&adate')
+new   1: insert into deposite3 values('100','anil','arce','amount','1000.00')
+insert into deposite3 values('100','anil','arce','amount','1000.00')
+                                                 *
+ERROR at line 1:
+ORA-01722: invalid number
+
+
+SQL> insert into deposite3 values('&actno','&cname','&bname',&amount,'&adate');
+Enter value for actno: 100
+Enter value for cname: anil
+Enter value for bname: arce
+Enter value for amount: 1000.00
+Enter value for adate: 1-mar-95
+old   1: insert into deposite3 values('&actno','&cname','&bname',&amount,'&adate')
+new   1: insert into deposite3 values('100','anil','arce',1000.00,'1-mar-95')
+
+1 row created.
+
+SQL> insert into deposite3 values('&actno','&cname','&bname',&amount,'&adate');
+Enter value for actno: 101
+Enter value for cname: sunil
+Enter value for bname: ajni
+Enter value for amount: karolbagh
+Enter value for adate: 4-jan-96
+old   1: insert into deposite3 values('&actno','&cname','&bname',&amount,'&adate')
+new   1: insert into deposite3 values('101','sunil','ajni',karolbagh,'4-jan-96')
+insert into deposite3 values('101','sunil','ajni',karolbagh,'4-jan-96')
+                                                  *
+ERROR at line 1:
+ORA-00984: column not allowed here
+
+
+SQL> insert into deposite3 values('&actno','&cname','&bname',&amount,'&adate');
+Enter value for actno: 101
+Enter value for cname: sunil
+Enter value for bname: ajni
+Enter value for amount: 5000.00
+Enter value for adate: 4-jan-96
+old   1: insert into deposite3 values('&actno','&cname','&bname',&amount,'&adate')
+new   1: insert into deposite3 values('101','sunil','ajni',5000.00,'4-jan-96')
+
+1 row created.
+
+SQL> insert into deposite3 values('&actno','&cname','&bname',&amount,'&adate');
+Enter value for actno: 102
+Enter value for cname: mehul
+Enter value for bname: karolbagh
+Enter value for amount: 3500.00
+Enter value for adate: 17-nov-95
+old   1: insert into deposite3 values('&actno','&cname','&bname',&amount,'&adate')
+new   1: insert into deposite3 values('102','mehul','karolbagh',3500.00,'17-nov-95')
+
+1 row created.
+
+SQL> insert into deposite3 values('&actno','&cname','&bname',&amount,'&adate');
+Enter value for actno: 104
+Enter value for cname: madhuri
+Enter value for bname: chandi
+Enter value for amount: 1200.00
+Enter value for adate: 17-mar-95
+old   1: insert into deposite3 values('&actno','&cname','&bname',&amount,'&adate')
+new   1: insert into deposite3 values('104','madhuri','chandi',1200.00,'17-mar-95')
+
+1 row created.
+
+SQL> insert into deposite3 values('&actno','&cname','&bname',&amount,'&adate');
+Enter value for actno: 105
+Enter value for cname: prmod
+Enter value for bname: mg road
+Enter value for amount: 3000.00
+Enter value for adate: 27-mar-96
+old   1: insert into deposite3 values('&actno','&cname','&bname',&amount,'&adate')
+new   1: insert into deposite3 values('105','prmod','mg road',3000.00,'27-mar-96')
+
+1 row created.
+
+SQL> 106
+SP2-0226: Invalid line number
+SQL> );
+SP2-0042: unknown command ")" - rest of line ignored.
+SQL> insert into deposite3 values('&actno','&cname','&bname',&amount,'&adate');
+Enter value for actno: 106
+Enter value for cname: sandip
+Enter value for bname: andheri
+Enter value for amount: 2000.00
+Enter value for adate: 31-mar-96
+old   1: insert into deposite3 values('&actno','&cname','&bname',&amount,'&adate')
+new   1: insert into deposite3 values('106','sandip','andheri',2000.00,'31-mar-96')
+
+1 row created.
+
+SQL> insert into deposite3 values('&actno','&cname','&bname',&amount,'&adate');
+Enter value for actno: 107
+Enter value for cname: shivani
+Enter value for bname: virar
+Enter value for amount: 10000.00
+Enter value for adate: 5-sep-95
+old   1: insert into deposite3 values('&actno','&cname','&bname',&amount,'&adate')
+new   1: insert into deposite3 values('107','shivani','virar',10000.00,'5-sep-95')
+
+1 row created.
+
+SQL> insert into deposite3 values('&actno','&cname','&bname',&amount,'&adate');
+Enter value for actno: 108
+Enter value for cname: kranti
+Enter value for bname: nehruplace
+Enter value for amount: 5000.00
+Enter value for adate: 2-jul-95
+old   1: insert into deposite3 values('&actno','&cname','&bname',&amount,'&adate')
+new   1: insert into deposite3 values('108','kranti','nehruplace',5000.00,'2-jul-95')
+
+1 row created.
+
+SQL> insert into deposite3 values('&actno','&cname','&bname',&amount,'&adate');
+Enter value for actno: 109
+Enter value for cname: minu
+Enter value for bname: powal
+Enter value for amount: 7000.00
+Enter value for adate: 10-aug-95
+old   1: insert into deposite3 values('&actno','&cname','&bname',&amount,'&adate')
+new   1: insert into deposite3 values('109','minu','powal',7000.00,'10-aug-95')
+
+1 row created.
+
+SQL> select * from deposit ;
+
+     ACTIO CHAME                BNAME                              AMOUNT
+---------- -------------------- ------------------------------ ----------
+ADATE
+---------
+       100 anil                 arce                                 1000
+01-MAR-95
+
+       101 sunil                ajni                                 5000
+04-JAN-96
+
+       102 mehul                karolbaGH                            1200
+17-NOV-95
+
+
+     ACTIO CHAME                BNAME                              AMOUNT
+---------- -------------------- ------------------------------ ----------
+ADATE
+---------
+       104 madhuri              chandi                               1200
+17-DEC-95
+
+       105 prmod                m g road                             3000
+27-MAR-96
+
+
+SQL> select actno, amount from deposit;
+select actno, amount from deposit
+       *
+ERROR at line 1:
+ORA-00904: "ACTNO": invalid identifier
+
+
+SQL> select acto, amount from deposite3;
+select acto, amount from deposite3
+       *
+ERROR at line 1:
+ORA-00904: "ACTO": invalid identifier
+
+
+SQL> select acto.amount from diposite3;
+select acto.amount from diposite3
+                        *
+ERROR at line 1:
+ORA-00942: table or view does not exist
+
+
+SQL> select acto, amount from diposite3;
+select acto, amount from diposite3
+                         *
+ERROR at line 1:
+ORA-00942: table or view does not exist
+
+
+SQL> select acto, amount from deposite3;
+select acto, amount from deposite3
+       *
+ERROR at line 1:
+ORA-00904: "ACTO": invalid identifier
+
+
+SQL> select actno,amount from deposit;
+select actno,amount from deposit
+       *
+ERROR at line 1:
+ORA-00904: "ACTNO": invalid identifier
+
+
+SQL>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
